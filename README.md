@@ -17,7 +17,7 @@ I worked on this project with Chase Seeberger. https://github.com/ChaseLee21/wea
 
 ## Link
 
-https://github.com/willber10/Weather-By-City-Search
+https://willber10.github.io/Weather-By-City-Search/
 
 ## Screenshot
 <img src="./assets/project-6-screenshot.png" >
