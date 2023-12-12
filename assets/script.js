@@ -5,7 +5,7 @@ var APIKey = "1eae1e8e33a4224916c970cd7d0ffa0f";
 const apiURL = "https://api.openweathermap.org/data/2.5/forecast";
 
 const cityInput = document.getElementById("city");
-const seachBtn = document.getElementById("search");
+const searchBtn = document.getElementById("search");
 const forecastDisplay = document.getElementById("forecastDisplay");
 
 let city = "";
@@ -13,7 +13,7 @@ let query = apiURL + "?q=" + city + "&appid=" + APIKey;
 
 let days = [ [], [], [], [], [] ];
 
-seachBtn.addEventListener("click", async function (event) {
+searchBtn.addEventListener("click", async function (event) {
     event.preventDefault();
     query =setQuery();
    await getWeather();
@@ -44,7 +44,9 @@ function setQuery() {
         // stores an object which holds the date and the time of the date we are on 
         let date = createDateObject(segmentOfDay.dt_txt);
         // pushes the segment of the day into the array of the day we are on
-        days[dayCount].push(segmentOfDay);
+        if (dayCount < 5) {days[dayCount].push(segmentOfDay);
+        };
+        
         // check if its the last segment of the day
         if (date.time === "21:00:00") {
           // if it is then we move on to the next day
